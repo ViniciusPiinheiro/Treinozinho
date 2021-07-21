@@ -7,7 +7,7 @@
 
 import UIKit
 
-class RelatedMoviesViewController: UITableViewController {
+class MoviesViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()        
