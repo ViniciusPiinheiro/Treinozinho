@@ -8,9 +8,9 @@
 import Foundation
 
 class MoviesManager {
+    private(set) var movies: [Movie]
     private static var privateShared: MoviesManager?
-    private(set) var movies: [Movies]
-    
+        
     class var shared: MoviesManager {
         guard let uwShared = privateShared else {
             privateShared = MoviesManager()

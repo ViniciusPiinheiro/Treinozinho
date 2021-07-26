@@ -36,7 +36,7 @@ class OperationsAPI {
         }.resume()
     }
     
-    static public func getMovies(completionHandler: @escaping ((_ data:[Movies]?, _ error: Error?) -> Void)) {
+    static public func getMovies(completionHandler: @escaping ((_ data:[Movie]?, _ error: Error?) -> Void)) {
 
         guard let url = URL(string: baseURL) else {
             print("URL error: Bad formatter")
@@ -47,7 +47,7 @@ class OperationsAPI {
             if let data = data {
                 do {
                     let decoder = JSONDecoder()
-                    let movies = try decoder.decode([Movies].self, from: data)
+                    let movies = try decoder.decode([Movie].self, from: data)
                     completionHandler(movies, nil)
                 } catch let jsonError {
                     print("Error: \(jsonError.localizedDescription)")
